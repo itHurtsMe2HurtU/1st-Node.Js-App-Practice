@@ -1,12 +1,9 @@
 const express = require('express')
+require('dotenv').config()
 const path = require('path')
 
 const app = express()
-const port = 5000
-
-// app.get('/', (req, res) => {
-//     res.send('Hello World!')
-// })
+const port = process.env.PORT
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '/index.html'))
@@ -20,5 +17,5 @@ app.get('/avinash', (req, res) => {
 })
 
 app.listen(port, () => {
-    console.log(`FirstProgramApp is listening on port ${port}`.toUpperCase())
+    console.log(`Server is listening on port ${port}`.toUpperCase())
 })
